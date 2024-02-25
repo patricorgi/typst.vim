@@ -23,11 +23,11 @@ function! TypstIndent(lnum) abort " {{{1
     let l:pline = getline(l:plnum)
 
     if l:pline =~ '\v[\{\[\(]\s*$'
-      return indent(l:plnum) + s:sw
+      return indent(l:plnum)
     endif
 
     if l:line =~ '\v[\}\]\)]$'
-      return indent(a:lnum) - s:sw
+      return indent(a:lnum)
     endif
 
     return indent(l:plnum)
